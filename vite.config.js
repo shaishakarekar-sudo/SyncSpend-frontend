@@ -1,13 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// ✅ Render needs a relative path & dist output
+// ✅ Fixed root path and output directory
 export default defineConfig({
   plugins: [react()],
+  root: '.',                // tell Vite that index.html is at root
   build: {
-    outDir: 'dist', // output folder for production build
-  },
-  server: {
-    port: 3000, // local dev port
+    outDir: 'dist',         // folder where build files will go
   },
 })
